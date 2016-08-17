@@ -1,8 +1,8 @@
 /*
- * Cloud code for "nemp-nsw-training" connected to the "nemp_dev_training" MongoLab DB deployed on Heroku
+ * Cloud code for "nemp-training-dev" connected to the "nemp_dev_training" MongoLab DB deployed on Heroku
  * Git repo: 				https://github.com/grassland-curing-cfa/NempParseServerTraining
  * Heroku app: 				https://nemp-training-dev.herokuapp.com/parse
- * Initial checkin date: 		16/08/2016
+ * Initial checkin date: 		16/08/2016: a replicated file from the main.js for nemp-nsw-dev (https://github.com/grassland-curing-cfa/NempParseServerNSW)
  * Following-up check date:	dd/MM/yyyy:
  */
 
