@@ -102,7 +102,7 @@ var validationRequestEmailHtml = '<!DOCTYPE html><html>' +
 			'<td><p style="color:#C00000; font-weight: bold;">NEMP Grassland Curing Team</p><p>CFA HQ - Fire & Emergency Management - 8 Lakeside Drive, Burwood East, Victoria, 3151</p>' + 
 			'<p>E: <a href="mailto:' + CFA_NEMP_EMAIL + '" target="_top">' + CFA_NEMP_EMAIL + '</a></p></td></tr></table>' + 
 			'<br>' + 
-			'<p><i>Note: This email has been generated automatically by the NSW RFS Fuel State App.</i></p>' + 
+			'<p><i>Note: This email has been generated automatically by the CFA NEMP Grassland Curing Portal (training site).</i></p>' + 
 			'</body>' + 
 			'</html>';
 
@@ -153,7 +153,7 @@ Parse.Cloud.define("sendEmailWantToBecomeObserver", function(request, response) 
     // the email body HTML template to RFS staff
     var html1 = '<!DOCTYPE html><html>' +
     '<body>' + 
-    'Hello RFS Fire Behaviour Analysis Team,' + 
+    'Hello CFA NEMP Team & RFS Fire Behaviour Analysis Team,' + 
     '<p>' + '<strong>' + firstname + ' ' +  lastname + '</strong> (<a href="mailto:' + email + '">' + email + '</a>) has shown interest to become an observer. The following contact details have also been provided on the Portal:</p>' + 
     '<ul>' + 
     '<li>Address: ' + address + '</li>' + 
@@ -163,23 +163,21 @@ Parse.Cloud.define("sendEmailWantToBecomeObserver", function(request, response) 
     '</ul>' +
     '<p>Also, an introductory welcoming email has been sent to <a href="mailto:' + email + '">' + email + '</a>.</p>' + 
     '<p>Kind Regards,</p>' + 
-    '<p><i>Note: This email has been generated automatically by the NSW RFS Fuel State App.</i></p>' + 
+    '<p><i>Note: This email has been generated automatically by the CFA NEMP Grassland Curing Portal (training site) .</i></p>' + 
     '</body>' + 
     '</html>';
      
     // the email body HTML template to who registered interest to become an observer
     var html2 = '<!DOCTYPE html><html>' +
     '<body>' + 
-    'Welcome to the NSW Rural Fire Service Grassland Fuel Portal.' + 
-    '<p>A NSW RFS member will sign you up to our online Portal. Once you have been added to the Portal, you will receive an automatic email to verify your email address before you can access the online portal.</p>' + 
+    'Welcome to the CFA NEMP Grassland Curing Portal (training site).' + 
+    '<p>A CFA NEMP Grassland Curing Team member will sign you up to our online Portal. Once you have been added to the Portal, you will receive an automatic email to verify your email address before you can access the online portal.</p>' + 
     '<p>Thank you for your assistance in Grassland Fuel Reporting.</p>' + 
-    '<p>NSW RFS Fire Behaviour Analysis Team</p>' + 
-    '<p>NSW RURAL FIRE SERVICE</p>' + 
-    '<p>Headquarters 15 Carter Street Lidcombe NSW 2141 | Locked Bag 17 Granville NSW 2142</p>' + 
-    '<p><strong>P</strong> 02 8741 5254 <strong>E</strong> FireBehaviour.Analysis@rfs.nsw.gov.au</p>' + 
-    '<p>www.rfs.nsw.gov.au | www.facebook.com/nswrfs | www.twitter.com/nswrfs</p>' + 
-    '<p><strong>PREPARE. ACT. SURVIVE.</strong></p>' + 
-    '<p><i>Note: This email has been generated automatically by the NSW Rural Fire Service Grassland Fuel Portal. Please do not reply to this email.</i></p>' + 
+    '<p>The NEMP Grassland Curing Team</p>' + 
+    '<p>Victoria Country Fire Authority</p>' + 
+    '<p>CFA HQ - Fire & Emergency Management - 8 Lakeside Drive, Burwood East, Victoria, 3151</p>' + 
+    '<p>grasslandcuring-nemp@cfa.vic.gov.au</p>' + 
+    '<p><i>Note: This email has been generated automatically by the CFA NEMP Grassland Curing Portal (training site) . Please do not reply to this email.</i></p>' + 
     '</body>' + 
     '</html>';
 
@@ -202,7 +200,7 @@ Parse.Cloud.define("sendEmailWantToBecomeObserver", function(request, response) 
       from: RFS_FBA,
       to: email,
       bcc: CFA_NEMP_EMAIL,
-      subject: "Welcome to the NSW Rural Fire Service Grassland Fuel Portal.",
+      subject: "Welcome to the CFA NEMP Grassland Curing Portal (training site).",
       text: '',
       html: html2
     }, function (error, body) {
@@ -235,7 +233,7 @@ Parse.Cloud.define("sendEmailWelcomeNewUser", function(request, response) {
     '<p>Hi ' + firstname + ',' + '</p>' + '<br>' + 
     '<p>Thank you for participating in the New South Wales grassland curing trial. This trial is supported in collaboration with the NSW Rural Fire Services (RFS) and is sponsored by the Commonwealth Attorney General&#39;s Department National Emergency Management Projects (NEMP).</p>' + '<br>' + 
     '<p>Currently in Victoria, grassland curing is monitored operationally using a combination of satellite data and field observations, which are reported weekly by observers using a web-based data entry tool. As a trial, we are deploying the Victorian approach for New South Wales (as well as other states and territories). For online training videos, we encourage you to visit <a href="www.cfa.vic.gov.au/grass">www.cfa.vic.gov.au/grass</a>.</p>' + '<br>' + 
-    '<p>The New South Wales web-based data entry tool can be accessed via: <a href="' + GAE_APP_URL + '">' + GAE_APP_URL + '</a> (take note, the tool works best on Firefox, Chrome, Internet Explorer 9 or 10)</p>' + '<br>' + 
+    '<p>The NEMP Grassland Curing Training site can be accessed via: <a href="' + GAE_APP_URL + '">' + GAE_APP_URL + '</a> (take note, the tool works best on Firefox, Chrome, Internet Explorer 9 or 10)</p>' + '<br>' + 
     '<p>Your login details are as follows: </p>' + '<br>' + 
     '<ul>' + 
     '<li>Username: ' + username + '</li>' + 
@@ -243,7 +241,7 @@ Parse.Cloud.define("sendEmailWelcomeNewUser", function(request, response) {
     '</ul>' + '<br>' + 
     '<p>Once you have logged on, you can select &#34;Enter Observations&#34;, and click on your observation site. You can then enter your curing observation from the drop-down list as well as providing a height, cover and fuel load estimate. When you are finished, click &#34;Submit Observation&#34; at the bottom of the page.</p>' + '<br>' + 
     '<p>Observations can be entered anytime during the week up until <strong>Wednesday evening at 5pm</strong>. On <strong>Thursday morning</strong>, a trial curing map will be published and sent to all observers via email. We hope to continue this process on a weekly basis for the duration of the fire season.</p>' + '<br>' + 
-    '<p>Once again, we thank you for your interest. Please contact us, the NSW RFS Fire Behaviour Analysis Team <a href="mailto:' + RFS_FBA + '">' + RFS_FBA + '</a> if you have any questions. We look forward to hearing from you soon.</p>' + '<br>' + 
+    '<p>Once again, we thank you for your interest. Please contact us, the Victoria CFA NEMP Grassland Curing Team<a href="mailto:' + CFA_NEMP_EMAIL + '">' + CFA_NEMP_EMAIL + '</a> if you have any questions. We look forward to hearing from you soon.</p>' + '<br>' + 
     '<p>Kind Regards,</p>' + 
     '<p>The NEMP Grassland Curing Team</p>' + 
     '<br>' + 
@@ -251,7 +249,7 @@ Parse.Cloud.define("sendEmailWelcomeNewUser", function(request, response) {
     '<td><p style="color:#C00000; font-weight: bold;">NEMP Grassland Curing Team</p><p>CFA HQ - Fire & Emergency Management - 8 Lakeside Drive, Burwood East, Victoria, 3151</p>' + 
     '<p>E: <a href="mailto:' + CFA_NEMP_EMAIL + '" target="_top">' + CFA_NEMP_EMAIL + '</a></p></td></tr></table>' + 
     '<br>' + 
-    '<p><i>Note: This email has been generated automatically by the NSW Rural Fire Service Grassland Fuel Portal. Please do not reply to this email.</i></p>' + 
+    '<p><i>Note: This email has been generated automatically by the CFA NEMP Grassland Curing Portal (training site). Please do not reply to this email.</i></p>' + 
     '</body>' + 
     '</html>';
 
@@ -259,7 +257,7 @@ Parse.Cloud.define("sendEmailWelcomeNewUser", function(request, response) {
       from: CFA_NEMP_EMAIL,
       to: email,
       bcc: CFA_NEMP_EMAIL,
-      subject: "Welcome to the NSW Grassland Curing Trial",
+      subject: "Welcome to the NSW Grassland Curing Trial (NEMP Training Site)",
       text: '',
       html: html
     }, function (error, body) {
@@ -303,7 +301,7 @@ Parse.Cloud.define("sendEmailFinalisedDataToObservers", function(request, respon
         '<p>The NSW grassland curing map has been updated for the ' + strToday + '. To view the map, please click <a href="' + GAE_APP_URL + '/viscaModel?action=grasslandCuringMap">here</a>.</p>' + 
         '<p>Kind Regards,</p>' + 
         '<p>NSW RFS Fire Behaviour Analysis Team <a href="' + RFS_FBA + '">' + RFS_FBA + '</a></p>' + 
-        '<p><i>Note: This email has been generated automatically by the NSW Rural Fire Service Grassland Fuel Portal. Please do not reply to this email.</i></p>' + 
+        '<p><i>Note: This email has been generated automatically by the CFA NEMP Grassland Curing Portal (training site). Please do not reply to this email.</i></p>' + 
         '</body>' + 
         '</html>';
 
