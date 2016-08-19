@@ -3,11 +3,10 @@
  * Git repo: 				https://github.com/grassland-curing-cfa/NempParseServerTraining
  * Heroku app: 				https://nemp-training-dev.herokuapp.com/parse
  * Initial checkin date: 		16/08/2016: a replicated file from the main.js for nemp-nsw-dev (https://github.com/grassland-curing-cfa/NempParseServerNSW)
- * Following-up check date:	dd/MM/yyyy:
+ * Following-up check date:		19/08/2016: removed node-schedule use of package
  */
 
 var _ = require('underscore');
-var schedule = require('node-schedule');			// https://www.npmjs.com/package/node-schedule
 
 var SUPERUSER = process.env.SUPER_USER;
 var SUPERPASSWORD = process.env.SUPER_USER_PASS;
