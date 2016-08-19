@@ -106,7 +106,7 @@ var validationRequestEmailHtml = '<!DOCTYPE html><html>' +
 			'</html>';
 
 Parse.Cloud.define("sendEmailRequestForValidation", function(request, response) {
-	console.log('Function [sendEmailRequestForValidation] being executed...');
+	console.log('Cloud function [sendEmailRequestForValidation] being executed...');
 
 	if (_IS_FIRE_DANGER_PERIOD) {
 		var toEmails = process.env.VALIDATION_NOTIF_TO_EMAILS;
