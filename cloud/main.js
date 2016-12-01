@@ -430,7 +430,7 @@ Parse.Cloud.define("deleteUserByUsername", function(request, response) {
 Parse.Cloud.beforeSave("GCUR_OBSERVATION", function(request, response) {
 	console.log("*** beforeSave triggered on GCUR_OBSERVATION");
 	Parse.Cloud.useMasterKey();
-	sharedWithJurisArr = [];
+	var sharedWithJurisArr = [];
 	
 	if(!request.object.existed()) {
 		
